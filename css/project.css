@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* 스크롤 이동을 부드럽게 */
+  scroll-behavior: smooth;
+}
+
+/* 영문에만 적용할 폰트 */
+.font-en {
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  /* 밑줄 제거 */
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  /* 이미지가 인라인 요소라서 발생하는 문자 기준선(Baseline) 아래의 공간을 제거하기 위해 */
+  display: block;
+}
+.inner {
+  /* 고정 길이 */
+  /* width: 1200px; */
+  /* 최대값만 제한 = 반응형 */
+  max-width: 1200px;
+  /* 가로 너비를 가진 블록 요소 가운데 정렬 */
+  margin: 0 auto;
+}
+.title {
+  font-size: 60px;
+  font-weight: bold;
+}
+  /* Header */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #c8c8c8;
+  box-shadow: 0 2px 8px rgba(204, 204, 204, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header .inner {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.inner .logo img{
+  width: 60px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul li {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* VISUAL */
+.visual {
+  margin-top: 60px ;
+  width: 100%;
+  background-image: url('/images/pexels-luis-gomes-166706-546819.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.visual .inner{
+  height: calc(80vh - 60px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.visual .inner h1{
+  font-size: 60px;
+  font-weight: bold;
+  color:hsla(0,0%,100%,.75);
+}
+.visual .inner h1 .name{
+  text-align: center;
+  margin-top: 50px;
+}
+.visual .inner h1::after{
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100px;
+  background-color: #d3cd9b;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.visual .inner h2{
+  text-align: center;
+  margin-top: 50px;
+  font-size: 25px;
+  color: hsla(0,0%,100%,.75);
+}
+/* About */
+.ABOUT h2{
+  text-align: center;
+  margin-top: 50px;
+}
+.ABOUT h2::after{
+  content: "";
+  display: block;
+  height: 5px;
+  width: 100px;
+  background-color: #d3cd9b;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.ABOUT .AboutContainer{
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-evenly;
+
+}

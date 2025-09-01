@@ -55,6 +55,40 @@ img {
   margin: 0 auto;
   margin-top: 20px;
 }
+/* 버튼과 같이 여러 곳에서 반복 사용되는 요소는 공통 스타일로 작업 */
+.btn {
+  display: block; /* a, span 같은 인라인 요소를 버튼으로 사용할 수 있으니 블록으로 지정*/
+  width: 120px; /* 버튼마다 크기가 같아야 하면 고정 길이, 아니면 그냥 패딩만 주기 */
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn.btn--purple {
+  color: #9b30ff;
+  border-color: #9b30ff;
+}
+.btn.btn--purple:hover {
+  color: #fff;
+  background-color: #9b30ff;
+}
+.btn.btn--brown {
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
 
 .animate-flash {
   animation-name: flash;
@@ -107,7 +141,6 @@ header nav ul li a::after {
   height: 2px;
   background-color: #9b30ff;
   transition: 0.5s;
-  
 }
 
 header nav ul li a:hover::after {
@@ -139,6 +172,9 @@ header nav ul li a:hover::after {
 /* ABOUT */
 .about {
   padding: 150px 0;
+}
+.about > .inner {
+  position: relative;
 }
 .about .about_wrapper {
   display: flex;
@@ -182,6 +218,193 @@ header nav ul li a:hover::after {
   line-height: 1.8;
 }
 
+.about .about_btn {
+  position: absolute;
+  right: 30px;
+  bottom: -30px;
+}
+
+/* .about .about_btn a{
+  display: flex;
+  align-items: center;
+} */
+/* flex를 쓰던가 아니면 아래와 같이 인라인 요소로 원복하고 vertical-align 사용 */
+
+.about .about_btn img{
+  width: 28px;
+  display: inline;
+  vertical-align: middle  ;
+  margin-right: 10px;
+}
+
+/* SKILL */
+.skill {
+  padding: 150px 0;
+  background-color: #000;
+  color: #fff;
+}
+.skill .title::after{
+  background-color: #fff;
+}
+.skill .skill_list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: center;
+}
+/* 하위 선택자가 아닌 자식 선택자 쓴 것에 유의! */
+.skill .skill_list > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 애니메이션 효과 추가 */
+  /* 방법1: position */
+  /* position: relative;
+  top: 100px; */
+  /* 방법2: transform */
+  transform: translateY(150px);
+  transition: 1s;
+  opacity: 0;
+}
+/* hover로 먼저 테스트 */
+.show .skill_list > li {
+  /* 방법1: position */
+  /* top: 0; */
+  /* 방법2: transform */
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.show .skill_list > li:nth-child(1) {transition-delay: 0.2s;}
+.show .skill_list > li:nth-child(2) {transition-delay: 0.4s;}
+.show .skill_list > li:nth-child(3) {transition-delay: 0.6s;}
+.show .skill_list > li:nth-child(4) {transition-delay: 0.8s;}
+.show .skill_list > li:nth-child(5) {transition-delay: 1s;}
+
+.skill .skill_list li h3 {
+  width: 50px;
+  height: 40px;
+  background-color: #9b30ff;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  transform: rotate(-20deg);
+  transition: 0.4s;
+}
+
+.skill .skill_list li:hover h3 {
+  transform: rotate(0deg);
+}
+
+.skill .skill_list li h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+/* PROJECT */
+.project {
+  padding: 150px 0;
+}
+.project .port {
+  display: flex;
+  margin: 20px 0;
+}
+.project .port .port_img,
+.project .port .port_text {
+  width: 50%;
+  height: 400px;
+}
+
+.project .port .port_img .swiper {
+  width: 100%;
+  height: 100%;
+}
+.project .port .port_img .swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project .port .port_text {
+  padding: 30px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.project .port .port_text h3 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.project .port .port_text li {
+  line-height: 1.8;
+}
+.project .port .port_text li span {
+  font-weight: bold;
+}
+
+.project .port .btn-group {
+  display: flex;
+  column-gap: 40px;
+}
+
+/* MODAL */
+#modal.show {
+  display: flex;
+}
+#modal {
+  /* quiz: 화면 전체 영역 덮기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  
+  z-index: 99;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#modal .modal-content {
+  background-color: #fff;
+  border-radius: 8px;
+  /* 고정 길이 */
+  /* width: 800px; */
+  /* 상대 길이 */
+  width: 60%;
+}
+
+#modal .modal-header {
+  padding: 16px;
+  background-color: #222;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#modal .modal-header .btn-close {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#modal .modal-header .btn-close:hover{
+  color: #aaa;
+}
+
+#modal .modal-body {
+  padding: 16px;
+}
 /* 애니메이션 정의는 맨 마지막에 */
 @keyframes flash {
   0%, 50% ,100% {opacity: 1;}

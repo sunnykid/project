@@ -97,7 +97,8 @@ spanYaer.textContent = new Date().getFullYear();
 
 // 페이지 최상단으로 이동
 const toTopEl = document.querySelector('#toTop');
-
+// Quiz : visual 섹션 애니메이션 넣고/빼기
+const visualSpanEls = document.querySelectorAll('.animate-flash')
 // 페이지에 스크롤 이벤트 감지를 추가!
 // 브라우저는 문서 전체의 스크롤을 window 기준으로 처리
 window.addEventListener('scroll' , function () {
@@ -105,8 +106,19 @@ window.addEventListener('scroll' , function () {
   if (window.scrollY >= 500) {
     toTopEl.style.transform = 'translateX(0px)';
     toTopEl.style.opacity = '1';
+    // visual 섹션 애니메이션 클래스 빼기
+    visualSpanEls.forEach(function (visualSpanEl) {
+      visualSpanEl.classList.remove('animate-flash');
+    });
   } else {
     toTopEl.style.transform = 'translateX(100px)';
     toTopEl.style.opacity = '0';
+    // visual 섹션 애니메이션 클래스 넣기
+
+      visualSpanEls.forEach(function (visualSpanEl) {
+      visualSpanEl.classList.add('animate-flash');
+      });
+
+
   }
 });

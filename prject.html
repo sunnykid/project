@@ -9,11 +9,14 @@
   <!-- reset -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
   <!-- 구글 웹폰트 연결 -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <!-- css 연결 -->
   <link rel="stylesheet" href="./css/project.css">
+  <!-- js 연결 -->
+  <script defer src="/js/project.js"></script>
 </head>
 <body>
   <!-- Header -->
@@ -24,34 +27,207 @@
       </a>
       <nav class="font-en">
         <ul>
-          <li><a href="#ABOUT">About</a></li>
-          <li><a href="SKILL">Skill</a></li>
-          <li><a href="#CONTACT">Contact</a></li>
+          <li><a href="#ABOUT">ABOUT</a></li>
+          <li><a href="#SKILL">SkILL</a></li>
+          <li><a href="#CONTACT">CONTACT</a></li>
         </ul>
       </nav>
     </div>
   </header>
-    <!-- VISUAL -->
-    <section class="visual">
-      <div class="inner">
-        <h1 class="font-en">
-          <div class="name">김겸원</div><br>Full Stack 개발자
-        </h1>
-        <h2 class="font-en">안녕하세요.<br>Full Stack 개발자 김겸원입니다.</h2>
-      </div>
-    </section>
-    <!-- ABOUT -->
-    <section id="ABOUT" class="ABOUT">
+  <!-- VISUAL -->
+  <section class="visual">
+    <div class="inner">
+      <h1 class="font-en">
+        <div class="name">김겸원</div><br>Full Stack 개발자
+      </h1>
+      <h2 class="font-en">안녕하세요.<br>Full Stack 개발자 김겸원입니다.</h2>
+    </div>
+  </section>
+  <!-- ABOUT -->
+  <section id="ABOUT" class="ABOUT">
+    <div class="inner">
       <h2 class="title">ABOUT ME</h2>
-      <div class="AboutContainer">
-        <div class="AboutItem">
-          <!-- ICON 삽입 -->
-        </div>
-        <div class="AboutItem">asdf</div>
-        <div class="AboutItem">asdf</div>
-      </div>
 
-    </section>
-  
+      <div class="AboutContainer">
+          <div class="AboutItem">
+            <div class="icon">
+              <span class="material-symbols-outlined">man</span>
+            </div>
+            <div class="About-text">
+              <h3 class="About-title">이름</h3>
+              <span>김겸원</span>
+            </div>
+          </div>
+          <div class="AboutItem">
+            <div class="icon">
+              <span class="material-symbols-outlined">calendar_month</span>
+            </div>
+            <div class="About-text">
+              <h3 class="About-title">생년월일</h3>
+              <span>2000.07.25</span>
+            </div>
+          </div>
+          <div class="AboutItem">
+            <div class="icon">
+              <span class="material-symbols-outlined">home_pin</span>
+            </div>
+            <div class="About-text">
+              <h3 class="About-title">위치</h3>
+              <span>서울시 도봉구 쌍문동</span>
+            </div>
+          </div>
+          <div class="AboutItem">
+            <div class="icon">
+              <span class="material-symbols-outlined">call</span>
+            </div>
+            <div class="About-text">
+              <h3 class="About-title">전화번호</h3>
+              <span>010-7146-4248</span>
+            </div>
+          </div>
+          <div class="AboutItem">
+            <div class="icon">
+              <span class="material-symbols-outlined">mail</span>
+            </div>
+            <div class="About-text">
+              <h3 class="About-title">이메일</h3>
+              <span>rlaruadnjs3@naver.com</span>
+            </div>
+          </div>
+          <div class="AboutItem">
+            <div class="icon">
+              <span class="material-symbols-outlined">book_2</span>
+            </div>
+            <div class="About-text">
+              <h3 class="About-title">학력</h3>
+              <span>대학 재학중</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SKILL -->
+  <section id="SKILL" class="SKILL">
+    <div class="inner">
+      <h2 class="title font-en">SKILLS</h2>
+      <div class="SkillContainer">
+
+        <div class="SkillItem">
+          <button class="skillLevel HTML" type="button">숙련도 보기</button>
+          <div class="skill-header">
+            <!-- <span class="material-symbols-outlined">code</span> -->
+            <img src="https://e7.pngegg.com/pngimages/116/40/png-clipart-5-logo-angle-area-text-brand-other-html-5-angle-text-thumbnail.png" alt="HTML" width="50px">
+            <h3>HTML</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill Html"></div>
+          </div>
+          <span class="percent Html">50%</span>
+        </div>
+        
+        <div class="SkillItem">
+          <button class="skillLevel CSS" type="button">숙련도 보기</button>
+          <div class="skill-header">
+            <img src="https://e7.pngegg.com/pngimages/604/592/png-clipart-css3-cascading-style-sheets-logo-html-beautify-blue-angle.png" alt="CSS" width="50px">
+            <h3>CSS</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill Css"></div>
+          </div>
+          <span class="percent Css">60%</span>
+        </div>
+        
+        <div class="SkillItem">
+          <button class="skillLevel JavaScript" type="button">숙련도 보기</button>
+          <div class="skill-header">
+            <img src="https://velog.velcdn.com/images/lvyest/post/4758992f-fc33-455f-8ae9-0f6aae0aa54a/image.png" alt="JavaScript" width="50px">
+            <h3>JavaScript</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill JavaScript"></div>
+          </div>
+          <span class="percent JavaScript">75%</span>
+        </div>
+        
+        <div class="SkillItem">
+          <button class="skillLevel Java" type="button">숙련도 보기</button>
+          <div class="skill-header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_yT-7QrWG7TwjwU4wewNeQSPXK2J81RTTHg&s" alt="Java" width="30px">
+            <h3>Java</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill Java"></div>
+          </div>
+          <span class="percent Java">80%</span>
+        </div>
+        
+        <div class="SkillItem">
+          <button class="skillLevel C" type="button">숙련도 보기</button>
+          <div class="skill-header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3hbRO0rvcpye0A0FReULeQmbADXsitOIYMA&s" alt="C++" width="50px">
+            <h3>C++</h3>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill C"></div>
+          </div>
+          <span class="percent C">40%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- CONTACT -->
+  <section id="CONTACT" class="CONTACT">
+    <div class="inner">
+      <h2 class="title">CONTACT</h2>
+      <p class="desc">궁금한 점이 있으면 언제든지 연락해주세요!</p>
+
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="info-item">
+            <span class="material-symbols-outlined">call</span>
+            <p>010-7146-4248</p>
+          </div>
+          <div class="info-item">
+            <span class="material-symbols-outlined">mail</span>
+            <p>rlaruadnjs3@naver.com</p>
+          </div>
+          <div class="info-item">
+            <span class="material-symbols-outlined">location_on</span>
+            <p>서울시 도봉구 쌍문동</p>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <input type="text" placeholder="이름" required />
+          <input type="email" placeholder="이메일" required />
+          <textarea placeholder="메시지를 입력하세요" rows="5" required></textarea>
+          <button type="submit">보내기</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="inner">
+      <p class="copyright">
+        &copy; <span class="this-year"></span>
+        <span class="font-en">Kim Gyum Won. AII Rights Reserved.</span>
+      </p>
+    </div>
+  </footer>
+  <!-- toTop -->
+  <div id="toTop" class="toTop">
+    <a href="#">
+      <span class="material-symbols-outlined">arrow_upward_alt</span>
+    </a>
+  </div>
+  <!-- toDown -->
+  <div id="toDown" class="toDown">
+    <span class="material-symbols-outlined">arrow_downward_alt</span>
+  </div>
+
+
+
+
 </body>
 </html>

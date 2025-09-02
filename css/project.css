@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 html {
   /* 스크롤 이동을 부드럽게 */
   scroll-behavior: smooth;
@@ -28,10 +27,14 @@ img {
   /* 가로 너비를 가진 블록 요소 가운데 정렬 */
   margin: 0 auto;
 }
-.title {
+.inner .title{
+  text-align: center;
+  margin-top: 50px;
+  color: #000;
   font-size: 60px;
   font-weight: bold;
 }
+
   /* Header */
 header {
   background-color: #fff;
@@ -64,18 +67,30 @@ header nav ul li {
   padding: 20px;
   font-size: 20px;
   font-weight: bold;
+  transition: 0.5s;
+}
+header nav ul li:hover {
+  color: #e06d43;
+  text-decoration: underline;
 }
 
 /* VISUAL */
 .visual {
-  margin-top: 60px ;
-  width: 100%;
-  background-image: url('/images/pexels-luis-gomes-166706-546819.jpg');
-  background-repeat: no-repeat;
+  background-image: url('/images/valeriia-miller-Ng5UHsSsR98-unsplash.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  position: relative;
+  margin-top: 60px ;
+  overflow: hidden;
+  width: 100%;
 }
 .visual .inner{
   height: calc(80vh - 60px);
+  max-width: 800px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -83,15 +98,28 @@ header nav ul li {
   justify-content: center;
 }
 .visual .inner h1{
-  font-size: 60px;
-  font-weight: bold;
+  margin: 0 0 20px;
+  line-height: 1.2;
   color:hsla(0,0%,100%,.75);
 }
 .visual .inner h1 .name{
   text-align: center;
   margin-top: 50px;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-.visual .inner h1::after{
+.visual .inner h2 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.85;
+}
+.inner h1::after,
+.inner .title::after{
   content: "";
   display: block;
   height: 5px;
@@ -101,13 +129,13 @@ header nav ul li {
   margin: 0 auto;
   margin-top: 50px;
 }
-.visual .inner h2{
-  text-align: center;
-  margin-top: 50px;
-  font-size: 25px;
-  color: hsla(0,0%,100%,.75);
-}
+
+
 /* About */
+.ABOUT {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
 .ABOUT h2{
   text-align: center;
   margin-top: 50px;
@@ -124,7 +152,285 @@ header nav ul li {
 }
 .ABOUT .AboutContainer{
   display: flex;
-  margin-top: 60px;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.ABOUT .AboutItem {
+  flex: 1 1 calc(33.333% - 20px);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transform: translateY(200px);
+  opacity: 0;
+  transition: 0.8s;
+}
 
+
+.ABOUT .AboutItem .material-symbols-outlined {
+  font-size: 50px;
+}
+.ABOUT .AboutItem .About-text{
+  text-align: center;
+  margin-left: 10px;
+}
+.ABOUT .AboutItem .About-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.ABOUT .AboutItem h3{
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+.ABOUT .AboutItem .About-text span{
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* SKILL */
+
+.SKILL {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.SKILL .SkillContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* 각 스킬 아이템 */
+.SKILL .SkillItem {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+/* 상단: 아이콘 + 기술명 */
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.skill-header span {
+  font-size: 28px;
+  color: #4a90e2;
+}
+
+.skill-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* 프로그레스 바 */
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #4a90e2;
+  border-radius: 5px;
+  transition: width 2s ease;
+}
+
+.SKILL .SkillItem .percent {
+  position: absolute;
+  right: 15px;
+  bottom: 40px;
+  display: none;
+}
+.SkillItem .skillLevel {
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  position: absolute;
+  left: 150px;
+  bottom: 50px;
+}
+.SkillItem .skillLevel.CSS {
+  left: 130px;
+  bottom: 40px;
+}
+
+.SkillItem .skillLevel.JavaScript {
+  left: 190px;
+  bottom: 40px;
+}
+
+.SkillItem .skillLevel.Java {
+  left: 122px;
+  bottom: 52px;
+}
+
+.SkillItem .skillLevel.C{
+  left: 130px;
+  bottom: 48px;
+}
+
+
+/* CONTACT */
+
+.CONTACT {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.CONTACT .desc {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.CONTACT .contact-wrapper {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.CONTACT .contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-info .info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  color: #333;
+}
+
+.info-item span {
+  font-size: 28px;
+  color: #4a90e2;
+}
+
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: none;
+  font-family: inherit;
+}
+
+.contact-form button {
+  padding: 14px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #357ABD;
+}
+
+/* FOOTER */
+footer {
+  background-color: #000;
+  color: #fff;
+}
+
+footer .copyright {
+  text-align: center;
+  font-weight: 600;
+  line-height: 200px;
+}
+
+#toTop{
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  
+  position: fixed;
+  z-index: 9;
+  right: 30px;
+  bottom: 90px;
+
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.6s;
+}
+#toDown {
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9;
+  right: 30px;
+  bottom: 20px;
+  cursor: pointer;
+
+  transform: translateX(100px);
+  opacity: 0;
+  transition: 0.6s;
+}
+#toTop a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#toTop span {
+  display: block;
+}
+
+#toDown span {
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

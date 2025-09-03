@@ -56,6 +56,114 @@
     transform: translateY(0);
   }
 }
+/* 기본적인 스타일 */
+#PROJECT {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+}
+
+.inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* 화면 크기에 따라 자동으로 줄 바꿈 */
+}
+
+.project-item {
+  width: 48%; /* 두 개의 아이템을 나누기 위한 너비 설정 */
+  overflow: hidden;
+  position: relative;
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 프로젝트 정보 */
+.project-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(100% - 40px); /* 이미지 너비와 맞추기 위한 계산 */
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.btn-project {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-project:hover {
+  background-color: #0056b3;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .project-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-item {
+    width: 80%;
+    margin-bottom: 20px;
+    position: relative; /* 모바일에서 절대 위치가 잘 동작하도록 */
+  }
+
+  .project-info {
+    position: static;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .btn-project {
+    font-size: 14px;
+  }
+}
 
   </style>
 </head>
@@ -69,6 +177,32 @@
     <h2 class="font-en">안녕하세요.<br />Full Stack 개발자가 </h2>
   </div>
 </section>
-
+<section id="PROJECT" class="PROJECT">
+  <div class="inner">
+    <h2 class="title font-en">PROJECT</h2>
+    <div class="project-container">
+      <div class="project-item">
+        <img src="./images/work_1.jpg" alt="프로젝트1">
+        <div class="project-info">
+          <h3 class="project-title">프로젝트 1</h3>
+          <p class="project-description">
+            이 프로젝트는 사용자의 경험을 개선하고, 직관적인 인터페이스를 제공하는 것을 목표로 했습니다.
+          </p>
+          <a href="#" class="btn-project">더 알아보기</a>
+        </div>
+      </div>
+      <div class="project-item">
+        <img src="./images/work_2.jpg" alt="프로젝트2">
+        <div class="project-info">
+          <h3 class="project-title">프로젝트 2</h3>
+          <p class="project-description">
+            이 프로젝트는 최신 기술을 이용한 혁신적인 웹 애플리케이션을 개발하는 것을 목표로 했습니다.
+          </p>
+          <a href="#" class="btn-project">더 알아보기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 </body>
 </html>

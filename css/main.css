@@ -653,6 +653,13 @@ footer .copyright {
   #imageModal .modal-body img {
     width: 100%;
   }
+  footer .inner .copyright {
+    line-height: 100px;
+  }
+  footer .inner .copyright span{
+    font-size: 14px;
+  }
+
 }
 
 

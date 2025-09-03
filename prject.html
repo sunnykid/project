@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <!-- css 연결 -->
   <link rel="stylesheet" href="./css/project.css">
+  <!-- ScrollMagic 라이브러리 추가 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
   <!-- js 연결 -->
   <script defer src="/js/project.js"></script>
 </head>
@@ -29,6 +32,7 @@
         <ul>
           <li><a href="#ABOUT">ABOUT</a></li>
           <li><a href="#SKILL">SkILL</a></li>
+          <li><a href="#PROJECT">PROJECT</a></li>
           <li><a href="#CONTACT">CONTACT</a></li>
         </ul>
       </nav>
@@ -44,7 +48,7 @@
     </div>
   </section>
   <!-- ABOUT -->
-  <section id="ABOUT" class="ABOUT">
+  <section id="ABOUT" class="ABOUT scrollMagic">
     <div class="inner">
       <h2 class="title">ABOUT ME</h2>
 
@@ -175,6 +179,22 @@
       </div>
     </div>
   </section>
+  <!-- PROJECT -->
+  <!-- <section id="PROJECT" class="PROJECT">
+    <div class="inner">
+      <h2 class="title font-en">PROJECT</h2>
+      <div class="project-container">
+
+        <div class="project-item">
+          <img src="./images/work_1.jpg" alt="프로젝트1">
+        </div>
+        <div class="project-item">
+          <img src="./images/work_2.jpg" alt="프로젝트2">
+        </div>
+      </div>
+    </div>
+  </section> -->
+
   <!-- CONTACT -->
   <section id="CONTACT" class="CONTACT">
     <div class="inner">
@@ -183,18 +203,32 @@
 
       <div class="contact-wrapper">
         <div class="contact-info">
+
           <div class="info-item">
             <span class="material-symbols-outlined">call</span>
             <p>010-7146-4248</p>
           </div>
+
           <div class="info-item">
             <span class="material-symbols-outlined">mail</span>
             <p>rlaruadnjs3@naver.com</p>
           </div>
+
           <div class="info-item">
             <span class="material-symbols-outlined">location_on</span>
             <p>서울시 도봉구 쌍문동</p>
           </div>
+
+          <div class="info-item">
+            <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_640.png" alt="github">
+            <p><a href="https://github.com/Kimgyumwon" target="_blank">https://github.com/Kimgyumwon</a></p>
+          </div>
+
+          <div class="info-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="instagram">
+            <p><a href="https://www.instagram.com/" target="_blank">https://www.instagram.com/</a></p>
+          </div>
+          
         </div>
 
         <form class="contact-form">

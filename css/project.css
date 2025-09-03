@@ -169,6 +169,17 @@ header nav ul li:hover {
   opacity: 0;
   transition: 0.8s;
 }
+.ABOUT.show .AboutItem{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ABOUT.show .AboutItem:nth-child(1) {transition-delay: 0.1s;}
+.ABOUT.show .AboutItem:nth-child(2) {transition-delay: 0.2s;}
+.ABOUT.show .AboutItem:nth-child(3) {transition-delay: 0.3s;}
+.ABOUT.show .AboutItem:nth-child(4) {transition-delay: 0.4s;}
+.ABOUT.show .AboutItem:nth-child(5) {transition-delay: 0.5s;}
+.ABOUT.show .AboutItem:nth-child(6) {transition-delay: 0.6s;}
 
 
 .ABOUT .AboutItem .material-symbols-outlined {
@@ -286,8 +297,21 @@ header nav ul li:hover {
   left: 130px;
   bottom: 48px;
 }
-
-
+/* PROJECT */
+.PROJECT .project-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.PROJECT .project-item {
+  padding: 20px;
+  box-shadow: 0 0 .5rem 0 rgba(68, 68, 68, .2);
+  border-radius: 1rem;
+  display: flex;
+}
+.PROJECT .project-item img {
+  width: 200px;
+}
 /* CONTACT */
 
 .CONTACT {
@@ -327,6 +351,14 @@ header nav ul li:hover {
 .info-item span {
   font-size: 28px;
   color: #4a90e2;
+}
+.info-item img {
+  width: 28px;
+  border-radius: 50%;
+}
+.info-item p:hover a{
+  color: #5099d4;
+  text-decoration: underline;
 }
 
 .contact-form {

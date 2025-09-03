@@ -1,28 +1,29 @@
+// const aEl = document.querySelector('.ABOUT');
+// let global = 0;
+// const bEl = new ResizeObserver(function (entries) {
+//   // console.log(entries[0].contentRect.height);
+//   global = entries[0].contentRect.height;
+//   console.log(global)
+// })
+// bEl.observe(aEl)
+
+const spyEls = document.querySelectorAll('.scrollMagic')
+const controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 1000}});
+// ScrollMagic 라이브러리
+spyEls.forEach(function (spyEl) {
+  const scene = new ScrollMagic.Scene({
+    triggerElement: spyEl, 
+    triggerHook: 0.5
+  })
+  .setClassToggle(spyEl , 'show')
+  // .addIndicators()
+  .addTo(controller);
+});
+
+
+
 const spanYaer = document.querySelector('.this-year');
 spanYaer.textContent = new Date().getFullYear();
-
-
-const AboutItems = document.querySelectorAll('.AboutItem');
-
-window.document.addEventListener('scroll' , function () {
-  if (window.scrollY >= 300 && window.scrollY <= 900) {
-    AboutItems.forEach(function (AboutItem, index) {
-      AboutItem.style.transform = 'translateY(0px)';
-      AboutItem.style.opacity = '1';
-      AboutItem.style.transitionDelay = `${(index+1)*0.1}s`
-    });
-  } else if (window.scrollY >= 900) {
-    AboutItems.forEach(function (AboutItem) {
-      AboutItem.style.transform = 'translateY(200px)';
-      AboutItem.style.opacity = '0';
-    });
-  } else {
-    AboutItems.forEach(function (AboutItem) {
-      AboutItem.style.transform = 'translateY(200px)';
-      AboutItem.style.opacity = '0';
-    });
-  }
-});
 
 const toTopEl = document.querySelector('#toTop');
 const toDownEl = document.querySelector('#toDown');

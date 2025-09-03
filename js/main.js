@@ -13,7 +13,6 @@ spyEls.forEach(function (spyEl) {
   })
   .setClassToggle(spyEl , 'show') //요소가 화면에 보이면 show 클래스 추가
   .addTo(controller);  // 컨트롤러에 장면을 할당(필수!)
-  
 });
 // Swiper 사용
 const swiper = new Swiper('.swiper', {
@@ -118,7 +117,24 @@ window.addEventListener('scroll' , function () {
       visualSpanEls.forEach(function (visualSpanEl) {
       visualSpanEl.classList.add('animate-flash');
       });
-
-
   }
+});
+
+const hamburgerBtn = document.querySelector('.btn-hamburger');
+const navEl = document.querySelector('header nav')
+
+hamburgerBtn.addEventListener('click' , function () {
+  if (navEl.classList.contains('active')) {
+    navEl.classList.remove('active');
+  } else {
+    navEl.classList.add('active');
+  }
+});
+
+const listEls = document.querySelectorAll('header nav ul li a');
+
+listEls.forEach(function (listEl) {
+  listEl.addEventListener('click' , function () {
+    navEl.classList.remove('active');
+  });
 });

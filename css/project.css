@@ -281,6 +281,9 @@ header nav ul li:hover {
 .SkillItem img {
   width: 50px;
 }
+.SkillItem.Java img {
+  width: 30px;
+}
 .SkillItem .skillLevel {
   border-radius: 8px;
   background-color: #fff;

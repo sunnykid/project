@@ -74,6 +74,14 @@ header nav ul li:hover {
   text-decoration: underline;
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+}
+
 /* VISUAL */
 .visual {
   background-image: url('/images/valeriia-miller-Ng5UHsSsR98-unsplash.jpg');
@@ -298,19 +306,73 @@ header nav ul li:hover {
   bottom: 48px;
 }
 /* PROJECT */
-.PROJECT .project-container {
+.PROJECT {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+.project-container {
+  display: flex;
+  flex-wrap: wrap;              
+  justify-content: center;      
+  gap: 30px;                    
+  max-width: 1200px;
+  margin: 0 auto;
   margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
 }
-.PROJECT .project-item {
+.project-item {
+  position: relative;
+  flex: 1 1 calc(33.333% - 30px); 
+  max-width: 350px;               
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease;
+}
+.project-item:hover {
+  transform: translateY(-10px);
+}
+.project-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   padding: 20px;
-  box-shadow: 0 0 .5rem 0 rgba(68, 68, 68, .2);
-  border-radius: 1rem;
-  display: flex;
 }
-.PROJECT .project-item img {
-  width: 200px;
+.project-item:hover .overlay {
+  opacity: 1;
+}
+.overlay h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.overlay p {
+  font-size: 13px;
+}
+.overlay a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.overlay a:hover {
+  background: #1e40af;
 }
 /* CONTACT */
 
@@ -464,5 +526,87 @@ footer .copyright {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  header .inner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #333;
+  }
+
+  header nav {
+    position: absolute;
+    top: 60px;         /* header 높이 밑 */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+  }
+
+  header nav.active {
+    transform: translateY(0);
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  header nav ul li {
+    text-align: center;
+    font-size: 18px;
+  }
+    .visual .inner h1 .name {
+    font-size: 40px;               
+  }
+  .visual .inner h2 {
+    font-size: 18px;
+  }
+
+  .ABOUT .AboutContainer {
+    flex-direction: column;        
+    align-items: center;
+  }
+  .ABOUT .AboutItem {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .project-container {
+    flex-direction: column;        
+    align-items: center;
+  }
+  .project-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .CONTACT .contact-wrapper {
+    flex-direction: column;        
+    gap: 20px;
+  }
+
+  #toTop {
+    width: 45px;
+    height: 45px;
+    right: 15px;       
+    bottom: 80px;      
+  }
+
+  /* Down 버튼 */
+  #toDown {
+    width: 45px;
+    height: 45px;
+    right: 15px;       
+    bottom: 20px;      
   }
 }

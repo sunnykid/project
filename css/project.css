@@ -542,7 +542,7 @@ footer .copyright {
 
   header nav {
     position: absolute;
-    top: 60px;         /* header 높이 밑 */
+    top: 60px;         
     left: 0;
     width: 100%;
     background: #fff;
@@ -552,7 +552,7 @@ footer .copyright {
   }
 
   header nav.active {
-    transform: translateY(0);
+    transform: translateY(-5px);
   }
 
   header nav ul {
@@ -565,7 +565,7 @@ footer .copyright {
     text-align: center;
     font-size: 18px;
   }
-    .visual .inner h1 .name {
+  .visual .inner h1 .name {
     font-size: 40px;               
   }
   .visual .inner h2 {
@@ -602,7 +602,7 @@ footer .copyright {
     bottom: 80px;      
   }
 
-  /* Down 버튼 */
+  
   #toDown {
     width: 45px;
     height: 45px;

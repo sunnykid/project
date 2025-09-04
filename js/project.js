@@ -110,3 +110,11 @@ const nav = document.querySelector('header nav');
 menuToggle.addEventListener('click', () => {
   nav.classList.toggle('active');
 });
+
+const menuList = document.querySelectorAll('nav>ul>li');
+
+menuList.forEach(function (menu) {
+  menu.addEventListener('click' , function () {
+    nav.classList.toggle('active');
+  })
+});

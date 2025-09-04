@@ -278,6 +278,9 @@ header nav ul li:hover {
   bottom: 40px;
   display: none;
 }
+.SkillItem img {
+  width: 50px;
+}
 .SkillItem .skillLevel {
   border-radius: 8px;
   background-color: #fff;

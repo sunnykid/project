@@ -84,7 +84,7 @@ header nav ul li:hover {
 
 /* VISUAL */
 .visual {
-  background-image: url('/images/valeriia-miller-Ng5UHsSsR98-unsplash.jpg');
+  background-image: url('./images/valeriia-miller-Ng5UHsSsR98-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
